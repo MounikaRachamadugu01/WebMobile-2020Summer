@@ -1,0 +1,79 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+
+}
+
+#id1 {
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: darkseagreen;
+}
+#id2{
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: green;
+}
+#id3 {
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: darkgreen;
+}
+#id4{
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: deepskyblue;
+}
+#id5{
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: blue;
+}
+#id6 {
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: darkblue;
+}
+#id7{
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: palevioletred;
+}
+#id8{
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: indianred;
+}
+#id9{
+
+    line-height: 70px;
+    width: 70px;
+    margin: 1px;
+    justify-content: center;
+    background-color: darkred;
+}
