@@ -1,0 +1,21 @@
+#color1 {
+    height: 50px;
+    width: 50px;
+    background-color: darkgreen;
+}
+
+#color2 {
+    height: 50px;
+    width: 50px;
+    background-color: cadetblue;
+}
+.media-body
+{
+  font-family: Calibri;
+    color: darkblue;
+
+}
+.container-fluid
+{
+    font-family: Calibri;
+}
