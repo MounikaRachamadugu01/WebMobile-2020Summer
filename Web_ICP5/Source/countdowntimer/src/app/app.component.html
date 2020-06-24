@@ -1,0 +1,37 @@
+<div class="text-center">
+  <h3>EVENT COUNTDOWN TIMER APPLICATION</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-5 event">
+    <h2 class="text-center">ADD EVENT DETAILS</h2>
+    <div class="">
+      <div class="input-group">
+        <form>
+          <!-- div to read event name -->
+          <div class="form-group">
+            <label for="eventname">Event Name</label>
+            <input type="text" class="form-control" id="eventname" aria-describedby="emailHelp" name="eventname" placeholder="Enter Event" [(ngModel)]="eventname">
+          </div>
+          <!-- div to read event date -->
+          <div class="form-group">
+            <label for="eventDate">Event Date</label>
+            <input type="date" class="form-control" id="eventDate" placeholder="Event Date" name="eventDate" [(ngModel)]="eventDate">
+          </div>
+          <!-- submit button to add event with click event -->
+          <button type="submit" class="btn btn-primary" (click)="showTimerInfo()">Add Event</button>
+        </form>
+      </div>
+    </div>
+    <!--Display Event Details (Event Name and Time left)-->
+    <h1 class="text-center" *ngIf="timerDetails" id="eventdetails" style="text-align: center;">Event Details:</h1>
+    <p class="timer" *ngIf="timerDetails">
+      {{eventname}}<br/>
+      {{timerDetails.days}}
+      <span class="text">days</span>
+      {{timerDetails.hours}} <span class="text">hours</span>
+      {{timerDetails.minutes}}
+      <span class="text">minutes</span>
+      {{timerDetails.seconds}} <span class="text">seconds</span>
+    </p>
+  </div>
