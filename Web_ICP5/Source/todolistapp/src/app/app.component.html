@@ -1,0 +1,22 @@
+<!-- display heading from .ts file -->
+<h1> {{title}} </h1>
+<!-- To enter task in a textbox and submit button to add task -->
+<input type ="text" #newTodo/>
+<button (click)="addTodo(newTodo.value);newTodo.value=''">Add Task</button>
+ <!-- display when no tasks -->
+<h3 *ngIf = "todos.length == 0">No Pending Tasks available</h3>
+<!-- / if tasks available then display in a table -->
+<table *ngIf = "todos.length > 0">
+  <tr>
+    <th>Task List</th>
+    <th>Actions</th>
+  </tr>
+  <!-- add items in the table -->
+  <tr *ngFor="let todo of todos">
+    <td>{{todo.label}}</td>
+    <td>
+      <!-- button delete the task -->
+      <button (click)="deleteTodo(todo)">delete</button>
+    </td>
+  </tr>
+</table>
