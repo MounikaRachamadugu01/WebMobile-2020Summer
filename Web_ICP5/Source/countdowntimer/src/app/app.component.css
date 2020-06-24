@@ -1,0 +1,37 @@
+.btn{
+    margin: 5px;
+    width: 35%;
+    
+  }
+
+  #eventDate, #eventname
+  {
+     font-size: 20px;
+  }
+
+  .timer .text {
+    font-size: 8px;
+  }
+  
+  label{
+    font-size: 2em;
+  }
+    p.timer {
+    
+    margin:0 auto;
+    border: 1px solid #602509;
+    border-radius: 10px; 
+    box-shadow: 2px 2px #ccc;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  .timer .text {
+    font-size: 8px;
+  }
+  
+  
+
+ 
