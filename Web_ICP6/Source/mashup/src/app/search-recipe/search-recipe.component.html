@@ -1,0 +1,84 @@
+<div class="parent-container">
+  <div class="child-container">
+    <div class="row">
+      <div class="col-sm-6">
+        <label id="s1">
+          <b>Search for your recipe and its details...!!</b>
+        </label>
+      </div>
+      <div class="col-sm-6">
+        <label id="s2">
+          <b>Search for Restaurants near by...!!</b>
+      </label>
+      </div>
+    </div>
+    <br>
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group col-lg-offset-5">
+              <input #recipe class="form-control" placeholder="Enter Recipe name" type="text" style="width: 200px; height: 30px;">
+            </div>
+          </div>
+            <br>
+          <div class="col-sm-6">
+            <div class="form-group ">
+              <input #place class="form-control" placeholder="Enter Place" type="text" style="width: 200px; height: 30px;">
+            </div>
+          </div>
+        </div>
+        <br>
+        <button (click)="getVenues()" id= "search" class="btn btn-primary" type="button">Search</button>
+      </div>
+    </form>
+  </div>
+</div><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default col-6">
+          <div  *ngFor="let recipeL of recipeList" class=" list-group-item clearfix">
+            <div class="panel-heading"><b>RECIPE DETAILS:</b></div>
+            <div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <h4 class="list-group-item-heading">Recipe Item: {{ recipeL.recipe.label }} </h4>
+              </div>
+              <div class="col-sm-4">
+                <h4 class="list-group-item-heading">Calories: {{ recipeL.recipe.calories}} </h4>
+              </div>
+              <div class="col-sm-4">
+                <h4 class="list-group-item-heading">Click on below image to know the recipe</h4>
+              </div>
+                <div class="col-sm-4 pull-right text-right">
+                    <a href="{{recipeL.recipe.url}}" class="list-group-item-text"><img style="height:150px; width:200px; " src="{{recipeL.recipe.image}}"/></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="panel panel-default col-6">
+
+          <div *ngFor="let venue of venueList" class="list-group-item clearfix">
+            <div class="panel-heading"><b>NEAR BY RESTAURANT:</b></div>
+            <div class="panel-body">
+            <div class="pull-left">
+              <h4 class="list-group-item-heading">{{ venue.name }}</h4>
+            </div>
+            <span class="pull-right">
+             <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}
+             &daddr={{venue.location.formattedAddress[0]}},{{venue.location.formattedAddress[1]}},{{venue.location.formattedAddress[2]}}">
+               <img src="../../assets/google.png" style="width: 40px; height: 40px;"></a>
+            </span>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
