@@ -32,12 +32,26 @@ export class WeatherService {
 
   getDailyWeather(cityNme,zipCode) {
     let dailyweatherUrl = 'http://api.weatherapi.com/v1/forecast.json?key=82e683c8bf114bb0afb141616200107&q='+zipCode+'&days=3';
+    console.log(dailyweatherUrl)
     return this.http.get(dailyweatherUrl);
   }
   getHistoryWeather(oldDate,zipCode) {
     let hourweatherUrl = 'http://api.weatherapi.com/v1/history.json?key=82e683c8bf114bb0afb141616200107&q='+zipCode+'&dt='+oldDate;
+    console.log(hourweatherUrl)
     return this.http.get(hourweatherUrl);
   }
+  getSearchHistory(cityName,zipCode) {
+    let req = {
+      city : cityName,
+      zipCode : zipCode
+    }
 
+    let searchHistoryUrl = 'http://localhost:3000/api/search-history/search';
+    return  this.http.post(searchHistoryUrl, req);
+  }
+  insertSearchHistory(json) {
+    let searchHistoryPostUrl = 'http://localhost:3000/api/search-history';
+    return this.http.post(searchHistoryPostUrl, json);
+  }
 
 }
