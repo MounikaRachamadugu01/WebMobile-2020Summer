@@ -1,0 +1,196 @@
+<div class="container1">
+  <br><br>
+  <div class="text-center">
+    <div class="col-sm-5">
+      <input type="text" id="cityName" name="cityName" class="form-control" required placeholder="Enter City Name"
+             [(ngModel)]="cityName"/>
+      <br>
+      <input type="text" id="zipCode" name="zipCode" class="form-control " required placeholder="Enter Zipcode"
+             [(ngModel)]="zipCode"/>
+      <br>
+    </div>
+    <div class="container">
+      <button type="button" class="btn btn-primary" (click)="getWeather()">Current Forecast</button>
+      <div class="divider"></div>
+      <button type="button" class="btn btn-primary" (click)="getForecastWeather()">Hourly Forecast</button>
+      <div class="divider"></div>
+      <button type="button" class="btn btn-primary" (click)="getDailyWeather()">Daily Forecast</button>
+      <div class="divider"></div>
+      <button type="button" class="btn btn-primary" (click)="getHistoryWeather()">yesteraday's weather</button>
+      <div class="divider"></div>
+      <button type="button" class="btn btn-primary" (click)="getSearchHistory()">Search History</button>
+      <div class="divider"></div>
+      <button type="button" class="btn pull-right" (click)="clearDetails()">Clear</button>
+
+    </div>
+    <br>
+    <div class="col-sm-7 prl-0">
+      <div *ngIf="!isSeen" class=" weatheresult rounded weatherBoxshadow1 weatherfixHeight" style="width:700px">
+        <h3>Current forecast of {{cityName}}</h3>
+        <div class="row">
+          <div class="col-sm-7 ">
+            <div class=row>
+              <div class="col">City Name: {{currentWeatherInfo.location.name}} </div>
+              <div class="col">State: {{currentWeatherInfo.location.region}} </div>
+              <div class="col">Country: {{currentWeatherInfo.location.country}} </div>
+              <div class="col">Time: {{currentWeatherInfo.location.localtime}} </div>
+              <div class="col"><img width="64" [src]="currentWeatherInfo.current.condition.icon"/></div>
+            </div>
+            <div class=row>
+              <div class="col">Temperature in celsius: {{currentWeatherInfo.current.temp_c}}</div>
+              <div class="col">pressure in mb: {{currentWeatherInfo.current.pressure_mb}}</div>
+              <div class="col">Humidity: {{currentWeatherInfo.current.humidity}}</div>
+              <div class="col">Feels like in celcius: {{currentWeatherInfo.current.feelslike_c}} </div>
+              <div class="col">wind in kph: {{currentWeatherInfo.current.wind_kph}} </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <div *ngIf="!isDisplayed">
+        <h3 class="text-black">3 hours forecast</h3>
+        <div class="card bg-light text-dark">
+          <table class="table table-bordered mb-0" cellspacing="20">
+            <thead>
+            <tr style="background: lightblue">
+              <th>date and time UTC</th>
+              <th>Temperature in K</th>
+              <th>Pressure hPa</th>
+              <th>Humidity %</th>
+              <th>Feels Like</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of forecastWeatherInfo">
+              <td>
+                {{ item.dt_txt }}
+              </td>
+              <td>
+                {{ item.main.temp }}
+              </td>
+              <td>
+                {{ item.main.pressure }}
+              </td>
+              <td>
+                {{ item.main.humidity }}
+              </td>
+              <td>
+                {{ item.main.feels_like }}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div *ngIf="!isDisplay">
+        <h3 class="text-black">3 day forecast</h3>
+        <div class="card bg-light text-dark">
+          <table class="table table-bordered mb-0" cellspacing="20">
+            <thead>
+            <tr style="background: lightblue">
+              <th>Date</th>
+              <th>Temperature in Celsius</th>
+              <th>Humidity %</th>
+              <th>Feels Like in Celsius</th>
+              <th>icon</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item1 of dailyforecastWeatherInfo">
+              <td>
+                {{ item1.date }}
+              </td>
+              <td>
+                {{ item1.day.maxtemp_c }}
+              </td>
+              <td>
+                {{ item1.day.avghumidity}}
+              </td>
+              <td>
+                {{ item1.day.avgtemp_c}}
+              </td>
+              <td>
+                <img width="64" [src]="item1.day.condition.icon"/>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div *ngIf="!isDisplaying">
+        <h3 class="text-black">Yesterdays weather</h3>
+        <div class="card bg-light text-dark">
+          <table class="table table-bordered mb-0" cellspacing="20">
+            <thead>
+            <tr style="background: lightblue">
+              <th>Date</th>
+              <th>Temperature in Celsius</th>
+              <th>Humidity %</th>
+              <th>Feels Like in Celsius</th>
+              <th>icon</th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr *ngFor="let item2 of historyforecastWeatherInfo">
+              <td>
+                {{ item2.date }}
+              </td>
+              <td>
+                {{ item2.day.maxtemp_c }}
+              </td>
+              <td>
+                {{ item2.day.avghumidity}}
+              </td>
+              <td>
+                {{ item2.day.avgtemp_c}}
+              </td>
+              <td>
+                <img width="64" [src]="item2.day.condition.icon"/>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div *ngIf="isSearchHistoryEnabled">
+      <h3 class="text-black">Search History</h3>
+      <div class="card bg-light text-dark">
+        <table class="table table-bordered mb-0" cellspacing="20">
+          <thead>
+          <tr style="background: lightblue">
+            <th>Date</th>
+            <th>Temperature in Celsius</th>
+            <th>Humidity %</th>
+            <th>Feels Like in Celsius</th>
+          </tr>
+
+          </thead>
+          <tbody *ngFor="let item of searchHistoryInfo">
+          <tr *ngFor="let item2 of item.forecast">
+            <td>
+              {{ item2.date }}
+            </td>
+            <td>
+              {{ item2.temperature }}
+            </td>
+            <td>
+              {{ item2.humidity}}
+            </td>
+            <td>
+              {{ item2.feelsLike}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br>
