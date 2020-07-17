@@ -28,9 +28,14 @@ public class CameraActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_REQ) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            ImageView imgV = findViewById(R.id.imgView);
+            ImageView imgV = findViewById(R.id.iv_image);
             imgV.setImageBitmap(bitmap);
         }
+    }
+
+    public void redirectToHome(View v) {
+        Intent redirect = new Intent(CameraActivity.this, MainActivity.class);
+        startActivity(redirect);
     }
 }
 

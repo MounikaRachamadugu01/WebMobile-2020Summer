@@ -1,54 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    tools:context="MainActivity">
+    android:orientation="vertical"
+       tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnDisplayLoc"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_DisplayLoc"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:minWidth="80dip"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
+        android:background="#a2c4c9"
+        android:text="LOCATE ME"
         android:onClick="getLocationDetails"
-        android:text="Display Current Location"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        />
 
     <Button
-        android:id="@+id/btnTakePhoto"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_TakePhoto"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnDisplayLoc"
-        android:layout_marginTop="31dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
         android:onClick="takePhoto"
-        android:text="Take Photo"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:background="#a2c4c9"
+        android:text="TAKE PHOTO"
+
+        />
 
     <Button
-        android:id="@+id/btnStorage"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_Record"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnRecord"
-        android:layout_marginTop="29dp"
-        android:onClick="saveData"
-        android:text="Save To Storage"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btnRecord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnTakePhoto"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
         android:onClick="recordVoice"
-        android:text="Record"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:background="#a2c4c9"
+        android:text="RECORD"
+         />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn_Storage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:onClick="saveData"
+        android:background="#a2c4c9"
+        android:text="STORE"
+        />
+
+</LinearLayout>

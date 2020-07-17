@@ -12,7 +12,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_30" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -33,7 +33,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3a_XL_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-16T19:41:44.719Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-07-16T22:31:30.224Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/AndroidHardware" />
@@ -136,5 +136,13 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="218" y="84" key="IDE.errors.dialog/0.0.1280.680@0.0.1280.680" timestamp="1594911854361" />
+    <state x="100" y="120" width="1073" height="440" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1594940505574">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="100" y="120" width="1073" height="440" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1280.680@0.0.1280.680" timestamp="1594940505574" />
+    <state x="335" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1594940288492">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="335" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1594940288492" />
   </component>
 </project>

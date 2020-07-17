@@ -13,12 +13,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AudioRecordingActivity extends AppCompatActivity {
+
+    // Declaring required variables
     Button btnStartRecord, btnStopRecord, btnStartPlay, btnStopPlay;
     MediaRecorder mediaRecorder;
     MediaPlayer mediaPlayer;
@@ -28,21 +29,22 @@ public class AudioRecordingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audiorecording);
-        btnStartRecord = findViewById(R.id.btnStartRecord);
-        btnStopRecord = findViewById(R.id.btnStopRecord);
-        btnStartPlay = findViewById(R.id.btnStartPlay);
-        btnStopPlay = findViewById(R.id.btnStopPlay);
+        btnStartRecord = findViewById(R.id.btn_StartRecord);
+        btnStopRecord = findViewById(R.id.btn_StopRecord);
+        btnStartPlay = findViewById(R.id.btn_StartPlay);
+        btnStopPlay = findViewById(R.id.btn_StopPlay);
         if (!checkPermission()) {
             requestPermission();
         }
     }
 
+    // Method to record
     public void startrecord(View view) {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String filename;
         filename = "Recording" + timeStamp + ".3gp";
         pathSave = getFilesDir() + filename;
-        Toast.makeText(getApplicationContext(), "Recording - Start Speaking..", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Recording - Start Speaking..!!!", Toast.LENGTH_SHORT).show();
 
         setupMediaRecord();
         try {
@@ -54,6 +56,7 @@ public class AudioRecordingActivity extends AppCompatActivity {
 
     }
 
+   // method to request access
     private void requestPermission() {
         ActivityCompat.requestPermissions(this, new String[]{
                 Manifest.permission.RECORD_AUDIO
@@ -80,19 +83,19 @@ public class AudioRecordingActivity extends AppCompatActivity {
         mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
         mediaRecorder.setOutputFile(pathSave);
     }
-
+// Method to Stop Recording
     public void stopRecord(View view) {
-        Toast.makeText(getApplicationContext(), "Stop Recording...!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Stop Recording..!!!", Toast.LENGTH_SHORT).show();
         mediaRecorder.stop();
         mediaRecorder.reset();
         mediaRecorder.release();
         mediaRecorder = null;
     }
-
+// Method to Play Recording
     public void playRecord(View view) {
         mediaPlayer = new MediaPlayer();
         try {
-            Toast.makeText(getApplicationContext(), "Play Recording..!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Play Recording..!!!", Toast.LENGTH_SHORT).show();
             mediaPlayer.setDataSource(pathSave);
             mediaPlayer.prepare();
             mediaPlayer.start();
@@ -101,8 +104,9 @@ public class AudioRecordingActivity extends AppCompatActivity {
         }
     }
 
+    // Method to Stop Playing
     public void stopPlay(View view) {
-        Toast.makeText(getApplicationContext(), "Stop playing Recording..!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Stop Playing Recording..!!!", Toast.LENGTH_SHORT).show();
         mediaPlayer.stop();
         mediaPlayer.release();
         setupMediaRecord();

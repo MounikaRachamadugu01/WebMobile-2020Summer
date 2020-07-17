@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -27,7 +26,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 public class LocationActivity extends AppCompatActivity implements OnMapReadyCallback {
-    //Declaring the variables
+    // Declaring the required variables
     private GoogleMap mMap;
     private static final String TAG = "MainActivity";
     private boolean mLocationPermission = false;
@@ -41,8 +40,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     /*
-     * This method will call after Map is ready.
-     * In this we will call the current location of the device.
+      This method will retrieve the current location of the device.
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -59,8 +57,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     /*
-     * This method will call once the user select the permission either allow or deny.
-     * Once the permission is allow then we are initializing the map.
+      This method is for the user to select the permission either allow or deny.
      */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -75,7 +72,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     /*
-     * In this method we will initialize the map settings.
+      Method to define map settings.
      */
     private void initMap() {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -85,7 +82,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
 
 
     /*
-     * In this method we will check the location permission.
+     Method to check the location permission.
      */
     private void checkLocationPermission() {
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
@@ -104,7 +101,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     /*
-     * In this method we will get the current location details.
+      Method to retrieve the current location details.
      */
     private void getCurrentLocation() {
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -132,11 +129,11 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     /*
-     * In this method we will update the marker and latitude and longitude details.
+      Method to update the marker, latitude and longitude details.
      */
     private void updateLocation(LatLng latlng, float zoom){
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latlng,zoom));
-        // Add a marker in Sydney and move the camera
+        // Add a marker and move the camera
         mMap.addMarker(new MarkerOptions().position(latlng).title("Latitude : "+latlng.latitude+" "+"Longitude : "+latlng.longitude));
     }
 }

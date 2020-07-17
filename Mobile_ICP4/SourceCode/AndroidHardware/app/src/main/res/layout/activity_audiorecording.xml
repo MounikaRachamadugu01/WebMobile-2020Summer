@@ -1,53 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:orientation="vertical"
     tools:context=".AudioRecordingActivity">
 
     <Button
-        android:id="@+id/btnStartRecord"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_StartRecord"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
+        android:background="#a2c4c9"
         android:onClick="startrecord"
-        android:text="Start Record"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_gravity="center"
+        android:text="START RECORD"
+         />
 
     <Button
-        android:id="@+id/btnStopRecord"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_StopRecord"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnStartRecord"
-        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="#a2c4c9"
+        android:layout_below="@+id/btn_StartRecord"
+        android:layout_marginTop="50dp"
         android:onClick="stopRecord"
-        android:text="Stop Record"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="STOP RECORD"
+        />
 
     <Button
-        android:id="@+id/btnStartPlay"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_StartPlay"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnStopRecord"
-        android:layout_marginTop="10dp"
+        android:background="#a2c4c9"
+        android:layout_below="@+id/btn_StopRecord"
+        android:layout_marginTop="50dp"
         android:onClick="playRecord"
-        android:text="Play"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_gravity="center"
+        android:text="PLAY"
+       />
 
     <Button
-        android:id="@+id/btnStopPlay"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_StopPlay"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnStartPlay"
-        android:layout_marginTop="10dp"
+        android:background="#a2c4c9"
+        android:layout_below="@+id/btn_StartPlay"
+        android:layout_marginTop="50dp"
         android:onClick="stopPlay"
-        android:text="Stop"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="STOP"
+         />
 
-</RelativeLayout>
+</LinearLayout>

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,14 +26,14 @@ public class StorageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storage);
-        txtData = findViewById(R.id.txtData);
-        lblData = findViewById(R.id.lblData);
+        txtData = findViewById(R.id.et_txtData);
+        lblData = findViewById(R.id.tv_Data);
         String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         String filename = "sample" + timeStamp + ".txt";
 
         pathSave = new File(getFilesDir(), filename);
     }
-
+// Method to Save Data
     public void save(View view) {
         String text = txtData.getText().toString();
         text = text + " ";
@@ -57,7 +56,7 @@ public class StorageActivity extends AppCompatActivity {
             }
         }
     }
-
+// Method to Load Data
     public void load(View view) {
         FileInputStream fis = null;
         try {

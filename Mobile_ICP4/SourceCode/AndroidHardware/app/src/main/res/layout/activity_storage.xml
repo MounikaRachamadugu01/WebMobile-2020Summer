@@ -8,40 +8,37 @@
     tools:context=".StorageActivity">
 
     <EditText
-        android:id="@+id/txtData"
+        android:id="@+id/et_txtData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Please enter the data to save."
-        android:textSize="18sp" />
-
+        android:hint="Enter the data to be saved here...!!"
+         />
     <Button
-        android:id="@+id/btnSaveData"
+        android:id="@+id/btn_SaveData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtData"
+        android:layout_below="@+id/et_txtData"
         android:layout_marginTop="10dp"
         android:onClick="save"
-        android:text="Save Data"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
+        android:background="#a2c4c9"
+        android:text="SAVE DATA"
+        />
     <Button
-        android:id="@+id/btnLoadData"
+        android:id="@+id/btn_LoadData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnSaveData"
+        android:layout_below="@+id/btn_SaveData"
         android:layout_marginTop="10dp"
         android:onClick="load"
-        android:text="Load Data"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
+        android:background="#a2c4c9"
+        android:text="OPEN"
+        />
     <TextView
-        android:id="@+id/lblData"
+        android:id="@+id/tv_Data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnLoadData"
+        android:layout_below="@+id/btn_LoadData"
         android:layout_marginTop="10dp"
         android:textSize="24sp"
         android:textStyle="bold" />

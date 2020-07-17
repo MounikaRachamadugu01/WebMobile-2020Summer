@@ -4,27 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="16dp"
-    android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:paddingTop="16dp"
     tools:context=".CameraActivity">
 
     <Button
-        android:id="@+id/btnCam"
+        android:id="@+id/btn_Camera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:onClick="openCamera"
+        android:background="#a2c4c9"
         android:text="Camera"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
+        />
     <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="351dp"
-        android:layout_height="286dp"
-        android:layout_below="@+id/btnCam"
-        android:layout_marginTop="100dp" />
+        android:id="@+id/iv_image"
+        android:layout_width="400dp"
+        android:layout_height="280dp"
+        android:layout_below="@+id/btn_Camera"
+        android:layout_marginTop="50dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:id="@+id/btn_home"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="#a2c4c9"
+        android:onClick="redirectToHome"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>
