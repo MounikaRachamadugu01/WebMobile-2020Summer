@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "969166317656",
+    "firebase_url": "https://newapp-5168c.firebaseio.com",
+    "project_id": "newapp-5168c",
+    "storage_bucket": "newapp-5168c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969166317656:android:de735e0ce462f039cfc22d",
+        "android_client_info": {
+          "package_name": "com.vijaya.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969166317656-75j048ikujfvbkctoaoi66i5tg2pb6gt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpSzDrIFsOITL1bzOkBnTA2az1suMDlm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969166317656-75j048ikujfvbkctoaoi66i5tg2pb6gt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
